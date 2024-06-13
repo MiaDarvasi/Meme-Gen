@@ -1,5 +1,7 @@
 'use strict'
 
+let gInputTxt = ''
+
 renderMeme()
 function renderMeme() {
 
@@ -15,11 +17,12 @@ function renderMeme() {
     const ctx = elCanvas.getContext('2d')
 
     setImg(ctx, elCanvas, meme.img, function () {
-        setLineTxt(ctx, meme.txt, 40, 30)
+        setTxt(ctx, gInputTxt, 150, 30)
     })
 }
 
-// function onChangeTxt() {
-//     var txt = this.value
-//     console.log(txt)
-// }
+function onChangeTxt() {
+    gInputTxt = document.querySelector('.text-input').value
+    setMemeTxt(gInputTxt)
+    renderMeme()
+}
