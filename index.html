@@ -11,10 +11,7 @@
 <body>
     <header class="grid-col">
         <article class="logo">MemeGen</article>
-        <nav class="header-nav">
-            <a class="clean-link" href="#">Gallery</a>
-            <a class="clean-link" href="#">About</a>
-        </nav>
+        <a class="clean-link" href="#">Gallery</a>
     </header>
 
     <nav class="main-nav grid-col">
@@ -31,13 +28,12 @@
         </section>
     </nav>
 
-    <section class="gallery">
+    <section class="gallery grid-col hidden">
     </section>
 
-    <section class="editor">
-        <section class="canvas-container">
-        </section>
-        <input class="text-input" oninput="onChangeTxt()" placeholder="Enter text"/>
+    <section class="meme-editor">
+        <section class="canvas-container"></section>
+        <section class="edit"></section>
     </section>
 
     <footer>
@@ -48,6 +44,8 @@
     <script src="js/utils.js"> </script>
     <script src="js/meme-service.js"> </script>
     <script src="js/meme-controller.js"> </script>
+    <script src="js/gallery-controller.js"> </script>
+
 </body>
 
 </html>

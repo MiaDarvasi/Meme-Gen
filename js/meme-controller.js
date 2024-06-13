@@ -1,28 +1,43 @@
 'use strict'
 
-let gInputTxt = ''
+let gInputTxt = 'Enter text'
 
-renderMeme()
-function renderMeme() {
+renderMeme(2)
+renderMemeTxt(2)
 
-    var meme = getMeme()
+function renderMeme(id) {
+
+    var meme = getMeme(id)
     const elEditor = document.querySelector('.canvas-container')
 
     elEditor.innerHTML =
-        `<canvas id="${meme.id}" width="300" height="300">
+        `<canvas id="${id}" width="300" height="300">
         Update your browser to enjoy canvas!
         </canvas>`
 
-    const elCanvas = document.getElementById(`${meme.id}`);
+    const elCanvas = document.getElementById(`${id}`);
     const ctx = elCanvas.getContext('2d')
 
-    setImg(ctx, elCanvas, meme.img, function () {
+    var img = meme.img
+    img.onload = function () {
+        ctx.drawImage(img, 0, 0, elCanvas.width, elCanvas.height)
         setTxt(ctx, gInputTxt, 150, 30)
-    })
+    }
+
+
 }
 
-function onChangeTxt() {
-    gInputTxt = document.querySelector('.text-input').value
+function renderMemeTxt(id) {
     setMemeTxt(gInputTxt)
-    renderMeme()
+
+    const elUserEdit = document.querySelector('.edit')
+    elUserEdit.innerHTML =
+        `<input id="text-input" oninput="onChangeTxt(${id})"
+        placeholder="Enter text" />`
+}
+
+function onChangeTxt(id) {
+    gInputTxt = document.getElementById('text-input').value
+    setMemeTxt(gInputTxt)
+    renderMeme(id)
 }

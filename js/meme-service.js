@@ -2,27 +2,28 @@
 
 let gMeme
 
-function getMeme() {
+function getMeme(id) {
     gMeme = {
-        id: getRandomIntInclusive(0, 9),
-        txt: 'momo',
-        img: getImageSrc(2),
+        id: id,
+        txt: '',
+        img: setImg(id),
     }
     return gMeme
 }
 
-function setImg(ctx, canvas, imgSrc, callback) {
+function setImg(id) {
     let img = new Image()
-    img.src = imgSrc
-    img.onload = function () {
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
-        if (callback) callback()
-    }
+    img.src = `img/meme-imgs(square)/${id}.jpg`
+    // img.onload = function () {
+    //     ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
+    //     if (callback) callback()
+    // }
+    return img
 }
 
-function getImageSrc(imgNum) {
-    return `img/meme-imgs(square)/${imgNum}.jpg`
-}
+// function getImageSrc(id) {
+//     return `img/meme-imgs(square)/${id}.jpg`
+// }
 
 function setTxt(ctx, text, x, y) {
     ctx.lineWidth = 2
