@@ -2,6 +2,10 @@
     gap: 1rem;
 }
 
-img {
+.gallery img {
     width: 100%;
+}
+
+.gallery img:hover {
+    cursor: pointer;
 }

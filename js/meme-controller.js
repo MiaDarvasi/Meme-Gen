@@ -1,9 +1,10 @@
 'use strict'
 
-let gInputTxt = 'Enter text'
-
-renderMeme(2)
-renderMemeTxt(2)
+let gUserInputs = {
+    txt: 'Enter text',
+    txtClr: 'white',
+    fontSize: 40,
+}
 
 function renderMeme(id) {
 
@@ -21,23 +22,49 @@ function renderMeme(id) {
     var img = meme.img
     img.onload = function () {
         ctx.drawImage(img, 0, 0, elCanvas.width, elCanvas.height)
-        setTxt(ctx, gInputTxt, 150, 30)
+        setTxt(ctx, gUserInputs.txt, gUserInputs.txtClr, gUserInputs.fontSize, 150, 30)
     }
-
-
 }
 
-function renderMemeTxt(id) {
-    setMemeTxt(gInputTxt)
+function renderMemeEdits(id) {
+    setMemeTxt(gUserInputs.txt)
 
     const elUserEdit = document.querySelector('.edit')
     elUserEdit.innerHTML =
         `<input id="text-input" oninput="onChangeTxt(${id})"
-        placeholder="Enter text" />`
+        placeholder="Enter text"/>
+        <input type="color" id="txt-clr-input" value="#ffffff" 
+        onchange="onSetTxtClr(this.value, ${id})" />
+        <button onclick="onIncreaseFont(${id})">Increase Font</button>
+        <button onclick="onDecreaseFont(${id})">Decrease Font</button>
+        <a href="#" class="btn-dwnld clean-link" onclick="downloadImg(this,${id})" 
+        download="my-img.jpg">Download</a>`
 }
 
 function onChangeTxt(id) {
-    gInputTxt = document.getElementById('text-input').value
-    setMemeTxt(gInputTxt)
+    gUserInputs.txt = document.getElementById('text-input').value
+    setMemeTxt(gUserInputs.txt)
     renderMeme(id)
 }
+
+function onSetTxtClr(color, id) {
+    gUserInputs.txtClr = color
+    renderMeme(id)
+}
+
+function onIncreaseFont(id) {
+    gUserInputs.fontSize++
+    renderMeme(id)
+}
+
+function onDecreaseFont(id) {
+    gUserInputs.fontSize--
+    renderMeme(id)
+}
+
+function downloadImg(elLink, id) {
+    const elCanvas = document.getElementById(`${id}`);
+    const meme = elCanvas.toDataURL('image/jpeg')
+    elLink.href = meme
+}
+
