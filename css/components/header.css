@@ -1,0 +1,10 @@
+header {
+    height: 4rem;
+
+    padding: 1rem;
+    background-color: var(--primaryBase1);
+}
+
+.header-nav {
+    justify-self: end;
+}

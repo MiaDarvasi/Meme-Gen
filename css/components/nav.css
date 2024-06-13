@@ -1,0 +1,6 @@
+.main-nav {
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    padding: 1rem;
+    background-color: var(--primaryBase2);
+}
