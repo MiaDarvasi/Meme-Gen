@@ -5,6 +5,19 @@
 body {
     margin: auto;
     background-color: var(--secondary1);
+    font-family: lato-reg;
 }
+
+input {
+    font-family: lato-reg;
+    border: none;
+}
+
+button {
+    font-family: lato-reg;
+}
+
+
+
 
 

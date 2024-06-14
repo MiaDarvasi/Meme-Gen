@@ -1,0 +1,9 @@
+.logo {
+    font-family: spicy-rice;
+    font-size: 2rem;
+    color: var(--primaryBase2);
+    text-shadow: -1px -1px 0 #000,  
+                  1px -1px 0 #000,
+                 -1px 1px 0 #000,
+                  1px 1px 0 #000;
+}

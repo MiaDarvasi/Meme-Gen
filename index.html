@@ -8,16 +8,16 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body>
+<body onload="renderGallery(18)">
     <header class="grid-col">
         <article class="logo">MemeGen</article>
-        <a class="clean-link" href="#">Gallery</a>
+        <a class="clean-link" href="#" onclick="onShowGallery()">Gallery</a>
     </header>
 
     <nav class="main-nav grid-col">
         <section class="search-key">
             <input id="search-input" placeholder="Enter search keyword" />
-            <label for="search-input">Search</label>
+            <label for="search-input"><img class="icon" src="img/icons/search-icon.png"></label>
         </section>
         <section class="search-word">
             <ul class="search-word-list clean-list grid-col">
@@ -28,7 +28,7 @@
         </section>
     </nav>
 
-    <section class="gallery grid-col">
+    <section class="gallery">
     </section>
 
     <section class="meme-editor hidden">

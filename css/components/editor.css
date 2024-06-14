@@ -1,6 +1,8 @@
 .meme-editor {
     display: grid;
     grid-auto-flow: column;
+    gap: 2rem;
+    padding: 5rem 2rem 5rem 2rem;
 }
 
 .hidden {

@@ -1,5 +1,10 @@
 .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem;
+
+    padding: 1rem 2rem 6rem 2rem;
+
 }
 
 .gallery img {
@@ -8,4 +13,8 @@
 
 .gallery img:hover {
     cursor: pointer;
+}
+
+.hidden {
+    display: none;
 }

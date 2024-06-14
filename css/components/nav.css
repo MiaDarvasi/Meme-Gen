@@ -5,3 +5,20 @@
     background-color: var(--primaryBase2);
     padding-top: 5rem;
 }
+
+.search-key {
+    display: flex;
+    place-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    max-height: inherit;
+    border-bottom: 1px solid black ;
+}
+
+.search-key img {
+    width: 1rem;
+}
+
+.hidden {
+    display: none;
+}
