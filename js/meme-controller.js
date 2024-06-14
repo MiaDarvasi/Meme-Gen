@@ -1,11 +1,5 @@
 'use strict'
 
-let gUserInputs = {
-    txt: 'Enter text',
-    txtClr: 'white',
-    fontSize: 40,
-}
-
 function renderMeme(id) {
 
     var meme = getMeme(id)
@@ -19,20 +13,24 @@ function renderMeme(id) {
     const elCanvas = document.getElementById(`${id}`);
     const ctx = elCanvas.getContext('2d')
 
-    var img = meme.img
+
+    var img = setImg(id)
     img.onload = function () {
         ctx.drawImage(img, 0, 0, elCanvas.width, elCanvas.height)
-        setTxt(ctx, gUserInputs.txt, gUserInputs.txtClr, gUserInputs.fontSize, 150, 30)
+        for (var i = 0; i < meme.lines.length; i++) {
+            setTxt(ctx, meme.lines[i].txt, meme.lines[i].clr, meme.lines[i].size, 150, 30 * Math.pow((i + 1), 3.2))
+        }
     }
 }
 
 function renderMemeEdits(id) {
-    setMemeTxt(gUserInputs.txt)
 
     const elUserEdit = document.querySelector('.edit')
     elUserEdit.innerHTML =
         `<input id="text-input" oninput="onChangeTxt(${id})"
         placeholder="Enter text"/>
+        <button onclick="onAddLine(${id})">Add Line</button>
+        <button onclick="onSwitchLine(${id})">Switch Line</button>
         <input type="color" id="txt-clr-input" value="#ffffff" 
         onchange="onSetTxtClr(this.value, ${id})" />
         <button onclick="onIncreaseFont(${id})">Increase Font</button>
@@ -42,23 +40,40 @@ function renderMemeEdits(id) {
 }
 
 function onChangeTxt(id) {
-    gUserInputs.txt = document.getElementById('text-input').value
-    setMemeTxt(gUserInputs.txt)
+    var txt = document.getElementById('text-input').value
+    var meme = getMeme(id)
+    setMemeTxt(txt, meme.selectedLineIdx)
     renderMeme(id)
+    console.log(gMeme)
 }
 
 function onSetTxtClr(color, id) {
-    gUserInputs.txtClr = color
+    var meme = getMeme(id)
+    setMemeTxtClr(color, meme.selectedLineIdx)
     renderMeme(id)
 }
 
 function onIncreaseFont(id) {
-    gUserInputs.fontSize++
+    var meme = getMeme(id)
+    increaseMemeTxtSize(meme.selectedLineIdx)
     renderMeme(id)
 }
 
 function onDecreaseFont(id) {
-    gUserInputs.fontSize--
+    var meme = getMeme(id)
+    decreaseMemeTxtSize(meme.selectedLineIdx)
+    console.log(gMeme)
+    renderMeme(id)
+}
+
+function onAddLine(id) {
+    addLine()
+    changeMemeLineIdx()
+    renderMeme(id)
+}
+
+function onSwitchLine(id) {
+    changeMemeLineIdx()
     renderMeme(id)
 }
 

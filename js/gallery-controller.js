@@ -10,6 +10,8 @@ function renderGallery() {
                          onclick="onImgSelect(${i})" alt="Meme pic"></img>`
     }
     elGallery.innerHTML = elGalleryHTML
+
+    getGallery(2)
 }
 
 function onImgSelect(id) {
@@ -22,8 +24,6 @@ function onImgSelect(id) {
         elEditor.classList.remove('hidden')
         
         renderMeme(id)
-        setMemeImg(img)
         renderMemeEdits(id)
-        console.log(gMeme)
     }
 }
