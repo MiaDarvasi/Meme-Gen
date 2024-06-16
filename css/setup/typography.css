@@ -1,9 +1,10 @@
 @font-face {
     font-family: spicy-rice;
-    src: url(/fonts/spicy-rice/SpicyRice-Regular.ttf);
+    /* src: url(/fonts/spicy-rice/SpicyRice-Regular.ttf); */
+    src: url(../../fonts/spicy-rice/SpicyRice-Regular.ttf);
 }
 
 @font-face {
     font-family: montserrat;
-    src: url(/fonts/montserrat/Montserrat-VariableFont_wght.ttf);
+    src: url(../../fonts/montserrat/Montserrat-VariableFont_wght.ttf);
 }
