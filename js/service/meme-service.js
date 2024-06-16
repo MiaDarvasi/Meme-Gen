@@ -24,24 +24,6 @@ function setLineSize(idx, width, height) {
     gMeme.lines[idx].lineSize = { width, height }
 }
 
-// function getGallery(imgNum) {
-//     gImgs = []
-//     for (let i = 1; i <= imgNum; i++) {
-//         let keywords = [];
-//         if (i === 6 || i === 8 || i === 10 || i === 11 || i === 12 ||
-//             i === 13 || i === 14 || i === 15 || i === 16 || i === 17) {
-//             keywords = ['funny', 'crazy']
-//         } else if (i === 2 || i === 3 || i === 4) {
-//             keywords = ['cute', 'animal']
-//         } else if (i === 5 || i === 7 || i === 9 || i === 18) {
-//             keywords = ['cute', 'baby']
-//         }
-//         gImgs.push({ id: i, url: `img/meme-imgs(square)/${i}.jpg`, keyWords: keywords })
-//     }
-//     return gImgs
-// }
-
-
 function getMeme(id) {
     gMeme.selectedImgId = id
     return gMeme

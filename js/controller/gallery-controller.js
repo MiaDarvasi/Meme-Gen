@@ -6,13 +6,12 @@ const gQueryOptions = {
 
 function renderGallery() {
     const gallery = getGallery(gQueryOptions)
-    console.log(gallery.length)
     var elGallery = document.querySelector('.gallery')
     var elGalleryHTML = ``
-    for (var i = 1; i < gallery.length; i++) {
+    for (var i = 0; i < gallery.length; i++) {
         if (!gallery[i].url) continue
         elGalleryHTML += `<img src=${gallery[i].url}
-        onclick="onImgSelect(${i})" alt="Meme pic"></img>`
+        onclick="onImgSelect(${i + 1})" alt="Meme pic"></img>`
     }
     elGallery.innerHTML = elGalleryHTML
 }
@@ -28,10 +27,9 @@ function onImgSelect(id) {
         elGallery.classList.add('hidden')
         elEditor.classList.remove('hidden')
 
-        // gCurrMemeId = id
         renderMeme(id, false)
         renderMemeEdits(id)
-        // addEventListeners(id)
+        // resizeCanvas()
     }
 }
 
@@ -52,6 +50,12 @@ function onSearchInput(filterBy) {
             gQueryOptions.filterBy.key = filterBy.txt
         }
     }
+    setQueryParams()
+    renderGallery()
+}
+
+function onFilterByWord(word) {
+    gQueryOptions.filterBy.key = word
     setQueryParams()
     renderGallery()
 }
