@@ -49,7 +49,7 @@ function getMeme(id) {
 
 function setImg(id) {
     let img = new Image()
-    img.src = `img/meme-imgs(square)/${id}.jpg`
+    img.src = `img/meme-imgs/${id}.jpg`
     return img
 }
 
