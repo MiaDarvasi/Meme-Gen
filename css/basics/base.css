@@ -5,16 +5,16 @@
 body {
     margin: auto;
     background-color: var(--secondary1);
-    font-family: lato-reg;
+    font-family: montserrat;
 }
 
 input {
-    font-family: lato-reg;
+    font-family: montserrat;
     border: none;
 }
 
 button {
-    font-family: lato-reg;
+    font-family: montserrat;
 }
 
 

@@ -8,43 +8,49 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body onload="renderGallery(18)">
+<body onload="renderGallery()">
     <header class="grid-col">
         <article class="logo">MemeGen</article>
         <a class="clean-link" href="#" onclick="onShowGallery()">Gallery</a>
     </header>
 
-    <nav class="main-nav grid-col">
+    <nav class="main-nav">
         <section class="search-key">
-            <input id="search-input" placeholder="Enter search keyword" />
+            <input id="search-input" placeholder="Enter search keyword" oninput="onSearchInput({ txt: this.value })" />
             <label for="search-input"><img class="icon" src="img/icons/search-icon.png"></label>
         </section>
         <section class="search-word">
-            <ul class="search-word-list clean-list grid-col">
-                <li><a class="clean-link" href="#">Funny</a></li>
-                <li><a class="clean-link" href="#">Dogs</a></li>
-                <li><a class="clean-link" href="#">Books</a></li>
-            </ul>
+            <p><span onclick="onFilterByWord('funny')">Funny</span>
+                <span>Animal</span>
+                <span>Crazy</span>
+                <span>Baby</span>
+                <span>Cute</span>
+            </p>
         </section>
     </nav>
 
-    <section class="gallery">
-    </section>
+    <section class="gallery"></section>
 
     <section class="meme-editor hidden">
         <section class="canvas-container"></section>
         <section class="edit"></section>
     </section>
 
+    <div class="share-modal hidden"></div>
+
     <footer>
         <article class="logo">MemeGen</article>
-        <p>© All Rights Reserved 2024</p>
+        <p>All Rights Reserved 2024</p>
     </footer>
 
-    <script src="js/utils.js"> </script>
-    <script src="js/meme-service.js"> </script>
-    <script src="js/meme-controller.js"> </script>
-    <script src="js/gallery-controller.js"> </script>
+    <script src="js/service/utils.js"> </script>
+    <script src="js/service/meme-service.js"> </script>
+    <script src="js/service/gallery-service.js"> </script>
+    <script src="js/controller/meme-controller.js"> </script>
+    <script src="js/controller/gallery-controller.js"> </script>
+    <script src="js/controller/share-controller.js"> </script>
+    <script src="js/share-fb/share-facebook.js"> </script>
+
 
 </body>
 

@@ -13,5 +13,10 @@
 @import url(./components/editor.css);
 @import url(./components/gallery.css);
 @import url(./components/logo.css);
+@import url(./components/share-modal.css);
+
+/* MQ */
+@import url(./mq.css);
+
 
 

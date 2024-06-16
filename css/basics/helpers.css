@@ -3,12 +3,6 @@
     color: inherit;
 }
 
-.clean-list {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-
 .grid-col {
     display: grid;
     grid-auto-flow: column;

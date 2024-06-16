@@ -1,14 +1,9 @@
 @font-face {
-    font-family: lato-reg;
-    src: url(/fonts/lato/lato-regular.ttf);
-}
-
-@font-face {
-    font-family: lato-bold;
-    src: url(/fonts/lato/lato-bold.ttf);
-}
-
-@font-face {
     font-family: spicy-rice;
     src: url(/fonts/spicy-rice/SpicyRice-Regular.ttf);
+}
+
+@font-face {
+    font-family: montserrat;
+    src: url(/fonts/montserrat/Montserrat-VariableFont_wght.ttf);
 }

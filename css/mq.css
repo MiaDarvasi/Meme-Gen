@@ -1,0 +1,31 @@
+/* Mobile */
+@media (max-width: 540px) {
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .main-nav {
+        grid-template-rows: 1fr 2fr;
+        gap: 0.5rem;
+    }
+
+    .meme-editor {
+        grid-auto-flow: row;
+    }
+}
+
+/* Desktop / Tablet */
+@media (min-width: 540px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .main-nav {
+        grid-template-columns: 1fr 2fr;
+        gap: 2rem;
+    }
+
+    .meme-editor {
+        grid-auto-flow: column;
+    }
+}

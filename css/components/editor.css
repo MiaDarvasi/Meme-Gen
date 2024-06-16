@@ -1,9 +1,90 @@
 .meme-editor {
     display: grid;
-    grid-auto-flow: column;
     gap: 2rem;
+
+    place-items: center;
+    justify-content: center;
+
     padding: 5rem 2rem 5rem 2rem;
 }
+
+.meme-editor>* {
+    width: 100%;
+}
+
+.meme-editor .edit {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 1rem;
+
+    place-items: center;
+}
+
+.meme-editor .edit img {
+    width: 2rem;
+}
+
+.meme-editor .edit #text-input {
+    height: 2rem;
+    width: 100%;
+    padding: 1.5rem 1rem 1.5rem 1rem;
+    border-radius: 10px;
+    font-size: inherit;
+}
+
+.meme-editor .edit button,
+.meme-editor .edit label {
+    max-height: 3rem;
+
+    padding: 0.4rem;
+    background-color: var(--primaryBase2);
+    margin: 0.5rem;
+    border: none;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.meme-editor .edit .font-clr {
+    display: flex;
+    align-items: center;
+}
+
+.meme-editor .edit #font-select {
+    padding: 0.7rem 0rem 0.7rem 0.5rem;
+    background-color: var(--primaryBase2);
+    margin: 0.5rem;
+    width: 7rem;
+
+    border: none;
+    border-radius: 10px;
+
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.meme-editor .edit label {
+    padding: 0.4rem 0.4rem 0.2rem 0.4rem;
+    max-height: 3rem;
+}
+
+.meme-editor .edit .share {
+    padding: 0.6rem 1.5rem 0.6rem 1.5rem;
+    background-color: var(--primaryBase1);
+    font-family: montserrat;
+    color: var(--primaryBase2);
+    font-size: 1.2rem;
+}
+
+.meme-editor .edit button:hover,
+.meme-editor .edit label:hover {
+    background-color: var(--primaryBase1);
+    cursor: pointer;
+}
+
+.meme-editor .edit .share:hover {
+    background-color: var(--secondary2);
+}
+
 
 .hidden {
     display: none;

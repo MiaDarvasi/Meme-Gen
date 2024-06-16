@@ -1,0 +1,73 @@
+.share-modal {
+    position: fixed;
+    left: 20vw;
+    top: 30vh;
+
+
+    width: 60vw;
+    height: 40vh;
+
+    background-color: var(--primaryBase2);
+    box-shadow: 0 0 10px rgba(176, 224, 230, 0.9);
+}
+
+.share-modal .modal-content {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+
+    justify-content: center;
+
+}
+
+.share-modal .modal-content>* {
+    align-self: center;
+
+    padding: 0.5rem;
+    background-color: var(--primaryBase1);
+    border: none;
+    border-radius: 10px;
+    margin: 0.5rem;
+
+    font-size: inherit;
+    transition: 0.5s;
+}
+
+.share-modal .modal-content a {
+    font-family: montserrat;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.share-modal .modal-content img {
+    width: 2rem;
+}
+
+.share-modal .modal-content>*:hover {
+    background-color: var(--secondary2);
+    cursor: pointer;
+}
+
+.share-modal .exit {
+    position: absolute;
+    left: calc(60vw - 3rem);
+    
+    width: 3rem;
+
+    background-color: var(--primaryBase2);
+    border: none;
+
+    color: var(--primaryBase1);
+    font-size: 2rem;
+
+}
+
+.share-modal .exit:hover {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}

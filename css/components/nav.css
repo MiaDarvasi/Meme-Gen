@@ -1,9 +1,41 @@
 .main-nav {
-    grid-template-columns: 1fr 2fr;
-    gap: 2rem;
-    padding: 1rem;
+    display: grid;
+
+    width: 100%;
+
+    padding: 0.5rem 1rem 0.5rem 1rem;
     background-color: var(--primaryBase2);
     padding-top: 5rem;
+}
+
+.search-word {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+
+    place-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    width: 100%;
+    max-width: 100%;
+
+}
+
+.search-word>* {
+    font-size: 1.5rem;
+    white-space: nowrap;     
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.search-word p>* {
+    margin: 0.5rem;
+}
+
+.search-word p>*:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .search-key {
@@ -11,8 +43,16 @@
     place-content: center;
     align-items: center;
     gap: 0.5rem;
+
+    justify-self: center;
+
     max-height: inherit;
-    border-bottom: 1px solid black ;
+    max-width: 15rem;
+    border-bottom: 1px solid black;
+}
+
+.search-key input {
+    font-size: 1rem;
 }
 
 .search-key img {
