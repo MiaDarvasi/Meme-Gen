@@ -5,8 +5,27 @@
     }
 
     .main-nav {
-        grid-template-rows: 1fr 2fr;
+        grid-template-areas:
+            "search-key button"
+            "search-word search-word";
+
         gap: 0.5rem;
+    }
+
+    .main-nav .search-key {
+        grid-area: search-key;
+    }
+
+    .main-nav .search-key::after {
+        bottom: 0rem;
+    }
+
+    .main-nav button {
+        grid-area: button;
+    }
+
+    .main-nav .search-word {
+        grid-area: search-word;
     }
 
     .meme-editor {
@@ -16,16 +35,26 @@
     }
 }
 
-/* Desktop / Tablet */
+
+/* Desktop or Tablet */
 @media (min-width: 600px) {
     .gallery {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
 
     .main-nav {
-        grid-template-columns: 1fr 2fr;
-        gap: 2rem;
+        grid-template-columns: 3fr 3fr 1fr;
+        gap: 1rem;
     }
+
+    .main-nav button {
+        min-height: 2.5rem;
+    }
+
+    .main-nav .search-key::after {
+        bottom: 1.25rem;
+    }
+
 
     .meme-editor {
         position: absolute;

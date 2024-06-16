@@ -34,7 +34,6 @@ function renderMeme(id, isEdit) {
     addEventListeners(id)
 }
 
-
 function renderMemeTxt(ctx, x, y, idx, isEdit) {
     setTxt(ctx, x, y, idx, isEdit)
 }

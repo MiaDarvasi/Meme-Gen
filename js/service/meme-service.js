@@ -1,6 +1,5 @@
 'use strict'
 
-// let gImgs = []
 let gMeme = {
     selectedImgId: null,
     selectedLineIdx: 0,
@@ -119,77 +118,6 @@ function clearMeme() {
     }
 }
 
-function clearLine(idx) {
-    // Find the index of the line with the given idx
-    const line = gMeme.lines.find(line => line.index === idx);
-
-    if (line) {
-        const canvas = document.getElementById(`${gCurrMemeId}`);
-        const ctx = canvas.getContext('2d');
-
-        // Clear the text area on the canvas where the line is rendered
-        ctx.clearRect(line.x, line.y - line.size, ctx.measureText(line.text).width, line.size);
-
-        console.log(`Cleared line with index ${idx} on canvas.`);
-    } else {
-        console.log(`Line with index ${idx} not found.`);
-    }
-
-    // Example: Render the meme again after clearing the line
-    // renderMeme(gCurrMemeId, true);
-}
-
-
-// function clearLine(idx) {
-//     // const lineIndex = gMeme.lines.findIndex(line => line.selectedLineIdx === idx)
-
-//     const lineIndex = gMeme.selectedLineIdx
-
-
-//     console.log(lineIndex)
-
-//     if (lineIndex !== -1) {
-//         // Remove the line from the array
-//         gMeme.lines.splice(lineIndex, 1);
-//     } else {
-//         console.log(`Line with index ${idx} not found.`);
-//     }
-
-//     // Example: Render the meme again after clearing the line
-//     // renderMeme(gCurrMemeId, true);
-// }
-
-
-function moveLine(idx, dx, dy) {
-    console.log('line.lineSize.width', gMeme.lines[idx].lineSize.width)
-    console.log('line.lineSize.height', gMeme.lines[idx].lineSize.height)
-
-    clearLine(idx)
-
-    gMeme.lines[idx].linePos.x += dx
-    gMeme.lines[idx].linePos.y += dy
-}
-
-
-function getEvPos(ev) {
-
-    let pos = {
-        x: ev.offsetX,
-        y: ev.offsetY,
-    }
-
-    if (TOUCH_EVS.includes(ev.type)) {
-        ev.preventDefault()
-        ev = ev.changedTouches[0]
-
-        pos = {
-            x: ev.pageX - ev.target.offsetLeft - ev.target.clientLeft,
-            y: ev.pageY - ev.target.offsetTop - ev.target.clientTop,
-        }
-    }
-    return pos
-}
-
 function isLineClicked(pos) {
     const line = gMeme.lines[gMeme.selectedLineIdx]
     const linePos = gMeme.lines[gMeme.selectedLineIdx].linePos
@@ -206,5 +134,3 @@ function isLineClicked(pos) {
         return false
     }
 }
-
-

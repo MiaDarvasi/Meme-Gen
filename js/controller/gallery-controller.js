@@ -4,6 +4,7 @@ const gQueryOptions = {
     filterBy: { key: '', }
 }
 
+
 function renderGallery() {
     const gallery = getGallery(gQueryOptions)
     var elGallery = document.querySelector('.gallery')
@@ -32,6 +33,11 @@ function onImgSelect(id) {
     }
 }
 
+function onGetRandomMeme() {
+    const id = Math.round(getRandomIntInclusive(0, 18))
+    onImgSelect(id)
+}
+
 function onShowGallery() {
     onClearMeme()
     var elGallery = document.querySelector('.gallery')
@@ -54,7 +60,7 @@ function onSearchInput(filterBy) {
 }
 
 function onFilterByWord(word) {
-    gQueryOptions.filterBy.key = word
+    gQueryOptions.filterBy.key = (word === 'all') ? '' : word
     setQueryParams()
     renderGallery()
 }
