@@ -34,23 +34,6 @@ function renderMeme(id, isEdit) {
     addEventListeners(id)
 }
 
-function resizeCanvas() {
-    const elContainer = document.querySelector('.canvas-container')
-    const elCanvas = document.getElementById(`${gCurrMemeId}`);
-    const ctx = elCanvas.getContext('2d')
-
-    const tempCanvas = document.createElement('canvas')
-    const tempCtx = tempCanvas.getContext('2d')
-
-    tempCanvas.width = elCanvas.width;
-    tempCanvas.height = elCanvas.height;
-    tempCtx.drawImage(elCanvas, 0, 0);
-
-    elCanvas.width = elContainer.clientWidth
-    elCanvas.height = elContainer.clientHeight
-
-    ctx.drawImage(tempCanvas, 0, 0);
-}
 
 function renderMemeTxt(ctx, x, y, idx, isEdit) {
     setTxt(ctx, x, y, idx, isEdit)

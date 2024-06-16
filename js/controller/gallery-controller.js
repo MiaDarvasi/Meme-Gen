@@ -29,7 +29,6 @@ function onImgSelect(id) {
 
         renderMeme(id, false)
         renderMemeEdits(id)
-        // resizeCanvas()
     }
 }
 
